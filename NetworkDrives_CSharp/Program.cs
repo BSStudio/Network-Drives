@@ -71,7 +71,11 @@ namespace MapDriveLetter
             result = WNetAddConnection3(IntPtr.Zero, ref networkResource, lpPassword, lpUsername, flags);
 
             networkResource.lpLocalName = "R:";
-            networkResource.lpRemoteName = "\\\\coding.sch.bme.hu\\archives";
+            networkResource.lpRemoteName = "\\\\trinity.sch.bme.hu\\archives";
+            result = WNetAddConnection3(IntPtr.Zero, ref networkResource, lpPassword, lpUsername, flags);
+
+            networkResource.lpLocalName = "W:";
+            networkResource.lpRemoteName = "\\\\coding.sch.bme.hu\\web";
             result = WNetAddConnection3(IntPtr.Zero, ref networkResource, lpPassword, lpUsername, flags);
 
             networkResource.lpLocalName = "X:";
